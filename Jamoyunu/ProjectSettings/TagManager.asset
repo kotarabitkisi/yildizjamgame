@@ -9,6 +9,7 @@ TagManager:
   - Projectile
   - Bow
   - Enemy
+  - BuffItem
   layers:
   - Default
   - TransparentFX
