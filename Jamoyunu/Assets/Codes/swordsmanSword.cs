@@ -11,7 +11,7 @@ public class swordsmanSword : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             collision.gameObject.GetComponent<PlayerStat>().Adrenaline -= stats.damage;
-                collision.gameObject.GetComponent<PlayerStat>().LoseSpeed*=1.5f ;
+                collision.gameObject.GetComponent<PlayerStat>().LoseSpeed*=1.2f ;
         }
     }
 }

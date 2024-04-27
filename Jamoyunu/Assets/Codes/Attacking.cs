@@ -17,7 +17,7 @@ public class Attacking : MonoBehaviour
             {
                 handling = true;
             }
-            else if (Input.GetMouseButtonUp(0))
+            else if (Input.GetMouseButtonUp(0)&&handling)
             {
                 bowItem.tag = "Projectile";
                 handling = false;
@@ -44,7 +44,7 @@ public class Attacking : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Item"&&bowItem==null&&collision.gameObject.GetComponent<Itemphysic>().canpick)
+        if (collision.gameObject.tag == "Item"&&bowItem==null)
         {
             pickItem(collision.gameObject);
         }

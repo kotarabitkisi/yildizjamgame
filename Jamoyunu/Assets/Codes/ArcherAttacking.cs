@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class ArcherAttacking : MonoBehaviour
 {
+    public Animator animator;
+    public EnemyStats stats;
     public float range;
     public GameObject Player;
     public float distancetoat, distancetosee, handleTime, throwspeed;
@@ -12,6 +14,7 @@ public class ArcherAttacking : MonoBehaviour
     public int arrowcount;
     private void Start()
     {
+        stats = GetComponent<EnemyStats>();
         Player = GameObject.FindGameObjectWithTag("Player");
     }
     private void Update()
@@ -20,10 +23,12 @@ public class ArcherAttacking : MonoBehaviour
         if (range < distancetosee)
         {
             rb.velocity = new Vector2((Player.transform.position.x - transform.position.x) * movespeed, rb.velocity.y);
+            animator.SetBool("Running",true);
         }
+        else { animator.SetBool("Running", false); }
 
 
-        if (range < distancetoat)
+        if (range < distancetoat&&!stats.died)
         {
             Vector2 PlayerPos = Player.transform.position;
             float angle = Mathf.Atan2(PlayerPos.y - bow.transform.position.y,PlayerPos.x - bow.transform.position.x) * Mathf.Rad2Deg;

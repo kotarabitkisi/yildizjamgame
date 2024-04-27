@@ -2,11 +2,12 @@ using UnityEngine;
 
 public class Itemphysic : MonoBehaviour
 {
+    
+    public Rigidbody2D rb;
     public Color color;
     public SpriteRenderer renderer;
     public float colortime;
-    public bool died,canpick;
-    public float picktime,tim;
+    public bool died;
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.layer == 3)
@@ -31,8 +32,10 @@ public class Itemphysic : MonoBehaviour
         }
         if (collision.gameObject.tag=="Enemy" && gameObject.tag == "Projectile")
         {
+
             collision.gameObject.GetComponent<EnemyStats>().die();
-            Destroy(gameObject);
+            died = true;
+            
         }
     }
     private void Update()
@@ -46,11 +49,6 @@ public class Itemphysic : MonoBehaviour
             {
                 Destroy(this.gameObject);
             }
-        }
-        tim += Time.deltaTime;
-        if (tim > picktime)
-        {
-            canpick = true;
         }
     }
 }

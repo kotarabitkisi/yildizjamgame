@@ -1,9 +1,11 @@
 using DG.Tweening;
 using System.Collections;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 
 public class SwordmanAttacking : MonoBehaviour
 {
+    public EnemyStats stats;
     public bool isAttacking;
     public GameObject Sword;
     public GameObject Player;
@@ -13,6 +15,7 @@ public class SwordmanAttacking : MonoBehaviour
 
     private void Start()
     {
+        stats = GetComponent<EnemyStats>();
         Player = GameObject.FindGameObjectWithTag("Player");
     }
     private void Update()
@@ -22,11 +25,11 @@ public class SwordmanAttacking : MonoBehaviour
         {
             rb.velocity = new Vector2((Player.transform.position.x - transform.position.x) * movespeed, rb.velocity.y);
         }
-        if(Player.transform.position.x - transform.position.x < 0)
+        if(Player.transform.position.x - transform.position.x < 0 && !stats.died)
         {
             this.transform.rotation = Quaternion.Euler(0, 0, 0);
         }
-        else
+        else if(!stats.died)
         {
             this.transform.rotation = Quaternion.Euler(0, 180, 0);
         }
