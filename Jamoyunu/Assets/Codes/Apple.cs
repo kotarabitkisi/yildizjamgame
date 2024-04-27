@@ -11,12 +11,13 @@ public class Apple : MonoBehaviour
     {
         Player = GameObject.FindGameObjectWithTag("Player");
     }
-
-    void Update()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        
+        if (collision.gameObject.tag == "Player")
+        {
+            Player.GetComponent<PlayerStat>().Adrenaline += Adrenaline;
+        }
     }
-
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Player")

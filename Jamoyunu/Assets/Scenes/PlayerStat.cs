@@ -6,9 +6,12 @@ public class PlayerStat : MonoBehaviour
     public string Name;
     public float Adrenaline = 0;
     public float MaxAdrenaline;
+    public float defaultlosespeed;
     public float LoseSpeed = 1;
     public float LoseSpeedTime = 1;
     private float LoseSpeedTimer = 0;
+    private float firetime = 0;
+    public float firetimer = 1;
     public float JumpForge = 2;
     public GameObject ProjectTile;
     public GameObject adrenalineBar;
@@ -18,7 +21,7 @@ public class PlayerStat : MonoBehaviour
     public float TimeScaleTime = 0;
     private float TimeScaleTimer = 0;
     [Header("ItemPicked")]
-    public bool medkit, apple, energydr, mushroom;
+    public bool medkit, apple, energydr, mushroom, fire;
 
     void Update()
     {
@@ -49,8 +52,18 @@ public class PlayerStat : MonoBehaviour
             if (LoseSpeedTimer >= LoseSpeedTime)
             {
                 medkit = false;
-                LoseSpeed = 1;
+                LoseSpeed = defaultlosespeed;
                 LoseSpeedTimer = 0;
+            }
+        }
+        if (fire)
+        {
+            firetime += Time.deltaTime;
+            if (firetime >= firetimer)
+            {
+                fire = false;
+                LoseSpeed = defaultlosespeed;
+                firetime = 0;
             }
         }
         Adrenaline -= LoseSpeed * Time.deltaTime;
