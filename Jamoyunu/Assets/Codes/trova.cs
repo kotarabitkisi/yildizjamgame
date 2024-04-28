@@ -28,7 +28,7 @@ public class test : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             Player.GetComponent<PlayerStat>().Adrenaline = 0;
-            //Player.GetComponent<PlayerStat>().isdead = true;
+            Player.GetComponent<PlayerStat>().die();
         }
     }
 }

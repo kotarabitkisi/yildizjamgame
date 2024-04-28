@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class EnergyDrink : MonoBehaviour
 {
-    
-    [SerializeField]
+    public AudioClip clip;
+    public AudioSource source;
     public float Value;
     public float Duration;
     private GameObject Player;
     void Start()
     {
+        source = GetComponent<AudioSource>();
         Player = GameObject.FindGameObjectWithTag("Player");
     }
     private void OnCollisionEnter2D(Collision2D collision)
@@ -26,6 +27,7 @@ public class EnergyDrink : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+            source.PlayOneShot(clip);
             PlayerStat stat = Player.GetComponent<PlayerStat>();
             stat.energydr = true;
             Time.timeScale = Value;

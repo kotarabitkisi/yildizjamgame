@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class Apple : MonoBehaviour
 {
-    [SerializeField]
+    public AudioClip clip;
+    public AudioSource source;
     public float Adrenaline;
     private GameObject Player;
     void Start()
     {
+        source = GetComponent<AudioSource>();
         Player = GameObject.FindGameObjectWithTag("Player");
     }
         private void OnCollisionEnter2D(Collision2D collision)
@@ -24,8 +26,13 @@ public class Apple : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+            source.PlayOneShot(clip);
+            if (!(Player.GetComponent<PlayerStat>().Immortal && Adrenaline < 0))
+            {
             Player.GetComponent<PlayerStat>().Adrenaline += Adrenaline;
             Destroy(gameObject);
+            }
+            
         }
     }
 }

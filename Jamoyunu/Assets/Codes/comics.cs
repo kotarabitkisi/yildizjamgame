@@ -1,35 +1,56 @@
 using DG.Tweening;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class comics : MonoBehaviour
 {
-    [SerializeField]
-    Image[] panels;
+    [SerializeField] GameObject[] panels;
+    [SerializeField] AudioSource[] sources;
     int index = 1;
     void Start()
     {
         foreach (var panel in panels)
         {
-            panel.enabled = false;
+            panel.SetActive(false);
         }
-        panels[0].enabled = true;
+        panels[0].SetActive(true);
+        openthissong(0);
     }
 
     void Update()
     {
-        if (panels[index] != null && Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))
         {
-            panels[index].enabled = true;
+            if (index == 1)
+            {
+                openthissong(1);
+            }
+            if (index == 4)
+            {
+                openthissong(2);
+            }
+            if (index < panels.Length)
+            {
+                transform.DOMove(panels[index].transform.position + Vector3.forward * -10, 0.75f);
+                panels[index].SetActive(true);
+
+            }
             index++;
         }
-        if (index == panels.Length)
+
+
+        if (index == panels.Length + 1)
         {
             SceneManager.LoadScene("SampleScenea");
         }
-        
+
+    }
+    public void openthissong(int num)
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            sources[i].enabled = false;
+        }
+        sources[num].enabled = true;
     }
 }

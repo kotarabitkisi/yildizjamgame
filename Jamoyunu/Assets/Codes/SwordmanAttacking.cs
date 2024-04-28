@@ -19,7 +19,7 @@ public class SwordmanAttacking : MonoBehaviour
         stats = GetComponent<EnemyStats>();
         Player = GameObject.FindGameObjectWithTag("Player");
         float multiple = carpan * (1 + Time.time/100);
-        movespeed = multiple*0.5f;
+        movespeed = multiple * 0.5f;
         stats.damage = multiple * 5;
         
     }

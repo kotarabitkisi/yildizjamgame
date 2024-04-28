@@ -58,4 +58,14 @@ public class EnemyStats : MonoBehaviour
             }
         }
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Bow")
+        {
+            if (collision.gameObject.transform.parent.GetComponent<Attacking>().isAttacking)
+            {
+            GetComponent<EnemyStats>().die();
+            }
+        }
+    }
 }

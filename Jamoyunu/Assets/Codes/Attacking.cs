@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Attacking : MonoBehaviour
 {
-    [SerializeField] AudioSource AttackSource;
-    [SerializeField] AudioClip Attacksound;
+    public AudioSource AttackSource;
+    public AudioClip Attacksound, higsound,itempicksound;
     [SerializeField] GameObject bowItem, bow;
     [SerializeField] float handleTime;
     [SerializeField] Vector2 throwvector;
@@ -34,7 +34,7 @@ public class Attacking : MonoBehaviour
         }
         else if (!isAttacking && Input.GetMouseButton(0))
         {
-            AttackSource.PlayOneShot(Attacksound);
+            AttackSource.PlayOneShot(higsound);
             StartCoroutine(AttackAnim());
         }
 
@@ -49,6 +49,7 @@ public class Attacking : MonoBehaviour
     {
         if (collision.gameObject.tag == "Item"&&bowItem==null)
         {
+            AttackSource.PlayOneShot(itempicksound);
             pickItem(collision.gameObject);
         }
     }

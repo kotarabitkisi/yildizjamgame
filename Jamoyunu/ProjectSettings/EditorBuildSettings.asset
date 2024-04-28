@@ -15,9 +15,9 @@ EditorBuildSettings:
     path: Assets/sahneler/creditist.unity
     guid: 143820852ec4c6c4ba50d9f60f499782
   - enabled: 1
-    path: Assets/sahneler/deadstate.unity
-    guid: 8106c06ee223d67cdb7c58b27681ec4d
-  - enabled: 1
     path: Assets/sahneler/Score.unity
     guid: 01c7a54320de8876b87ff2bb501b9ca6
+  - enabled: 1
+    path: Assets/sahneler/comics.unity
+    guid: a371471bfdc54834ba59091dd8365ac6
   m_configObjects: {}

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2244937323173543461}
   - component: {fileID: 3035949049352072214}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 4410369035952161236}
   - component: {fileID: 1224657475670531767}
   - component: {fileID: 1214419469169116460}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Square (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -190,7 +190,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7241602128889230935}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: WoodenWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -228,7 +228,7 @@ GameObject:
   - component: {fileID: 2611245401078901537}
   - component: {fileID: 696019453586087289}
   - component: {fileID: 3862911521687716825}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Square (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -325,7 +325,7 @@ GameObject:
   - component: {fileID: 3015120403044760622}
   - component: {fileID: 5685420871489510230}
   - component: {fileID: 7502476910276454226}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Square (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -422,7 +422,7 @@ GameObject:
   - component: {fileID: 8262011869241496526}
   - component: {fileID: 9108273628239746302}
   - component: {fileID: 4572688950124611916}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Square (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

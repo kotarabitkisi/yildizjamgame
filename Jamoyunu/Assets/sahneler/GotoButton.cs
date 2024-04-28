@@ -14,8 +14,16 @@ public class GotoButton : MonoBehaviour
     }
     void Goto(string scenename)
     {
-        Debug.Log("sceneName to load: " + scenename);
+        if (scene == "Exit")
+        {
+            Application.Quit();
+        }
+        else
+        {
+             Debug.Log("sceneName to load: " + scenename);
         Time.timeScale = 1;
         SceneManager.LoadScene(scenename);
+        }
+       
     }
 }

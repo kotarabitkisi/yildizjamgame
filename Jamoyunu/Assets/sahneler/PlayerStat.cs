@@ -24,8 +24,10 @@ public class PlayerStat : MonoBehaviour
     public float LoseSpeedTime = 1;
     private float LoseSpeedTimer = 0;
     private float firetime = 0;
+    public GameObject fireparticle;
     public float firetimer = 1;
     public float JumpForge = 2;
+    public float firsttime;
     public GameObject ProjectTile;
     public GameObject adrenalineBar;
     public bool Immortal = false;
@@ -36,7 +38,10 @@ public class PlayerStat : MonoBehaviour
     [Header("ItemPicked")]
     public bool medkit;
     public bool  apple, energydr, mushroom, fire;
-    
+    private void Start()
+    {
+        firsttime = Time.time;
+    }
     void Update()
     {
         if (Adrenaline <= 0&&!Immortal&&!died)
@@ -44,8 +49,8 @@ public class PlayerStat : MonoBehaviour
             died = true;
             die();
         }
-        score = Time.time*multipleScore;
-        scoretxtingame.text = "öldürme sayýsý: "+KillCounter+"\n geçen zaman: "+Time.time.ToString("0") + "\n skor: " + score ;
+        score += Time.deltaTime*multipleScore;
+        scoretxtingame.text = "öldürme sayýsý: "+KillCounter+"\n geçen zaman: "+(Time.time-firsttime).ToString("0") + "\n skor: " + score.ToString("0") ;
         m_Volume.profile.TryGet(out m_LensDistortion);
         m_LensDistortion.intensity.value = (1-Adrenaline/MaxAdrenaline)*multipleint;
         Adrenaline = Mathf.Clamp(Adrenaline, -Mathf.Infinity, MaxAdrenaline);
@@ -81,6 +86,7 @@ public class PlayerStat : MonoBehaviour
         }
         if (fire)
         {
+            fireparticle.SetActive(true);
             firetime += Time.deltaTime;
             if (firetime >= firetimer)
             {
@@ -89,6 +95,7 @@ public class PlayerStat : MonoBehaviour
                 firetime = 0;
             }
         }
+        else { fireparticle.SetActive(false); }
         Adrenaline -= LoseSpeed * Time.deltaTime;
         adrenalineBar.GetComponent<Image>().fillAmount = Adrenaline / MaxAdrenaline; 
 
@@ -98,7 +105,7 @@ public class PlayerStat : MonoBehaviour
         
         Time.timeScale = 0;
         LosePanel.SetActive(true);
-        scoretext.text = "öldürme sayýsý: " + KillCounter + "\ngeçen zaman: " + Time.time.ToString("0") + "\nskor: " + score;
+        scoretext.text = "öldürme sayýsý: " + KillCounter + "\ngeçen zaman: " + Time.time.ToString("0") + "\nskor: " + score.ToString("0");
 
     }
 

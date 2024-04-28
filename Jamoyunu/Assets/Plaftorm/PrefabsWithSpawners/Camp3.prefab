@@ -47,6 +47,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 904202033814120443}
     m_Modifications:
+    - target: {fileID: 1330842410519633185, guid: f8ccf627952f5294f9ab2dcf43a4cb5a, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6097624725610258873, guid: f8ccf627952f5294f9ab2dcf43a4cb5a, type: 3}
       propertyPath: m_Name
       value: Hangman

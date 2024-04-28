@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class Itemphysic : MonoBehaviour
 {
+    public AudioSource arrowsound;
+    public AudioClip arrowclip;
     public GameObject BloodEffect;
     public Rigidbody2D rb;
     public Color color;
@@ -29,6 +31,7 @@ public class Itemphysic : MonoBehaviour
         }
         if (collision.gameObject.tag=="Enemy" && gameObject.tag == "Projectile")
         {
+            arrowsound.PlayOneShot(arrowclip);
   GameObject BEffect =Instantiate(BloodEffect,collision.gameObject.transform.position,transform.rotation);
             Destroy(BEffect,0.9f);
             collision.gameObject.GetComponent<EnemyStats>().die();

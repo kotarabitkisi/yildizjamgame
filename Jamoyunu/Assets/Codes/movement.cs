@@ -3,7 +3,7 @@ using UnityEngine;
 public class movement : MonoBehaviour
 {
     [ExecuteInEditMode]
-    [SerializeField] AudioSource walkingsource,MainSource,MusicSource;
+    [SerializeField] AudioSource walkingsource,MainSource,MusicSource,DeathMusicSource;
     [SerializeField] AudioClip walkingsound,Jumpsound;
     [SerializeField] float walksoundthreshold;
     [SerializeField] float angle;
@@ -62,6 +62,7 @@ public class movement : MonoBehaviour
             MusicSource.enabled = false;
             walkingsource.enabled = false;
             MainSource.enabled = false;
+            DeathMusicSource.enabled = true;
         }
     }
     void Jump()
