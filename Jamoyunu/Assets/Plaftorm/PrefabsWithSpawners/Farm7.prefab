@@ -674,6 +674,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Farm House
       objectReference: {fileID: 0}
+    - target: {fileID: 6489382731967543327, guid: d48f51367ef421140837e060c54abf7b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7700678191131280120, guid: d48f51367ef421140837e060c54abf7b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -9.229998

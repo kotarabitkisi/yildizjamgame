@@ -1,10 +1,22 @@
+using DG.Tweening;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering;
-using UnityEngine.Rendering.PostProcessing;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
 
 public class PlayerStat : MonoBehaviour
 {
+    [SerializeField] GameObject LosePanel;
+    [SerializeField] TextMeshProUGUI scoretext;
+    [SerializeField] TextMeshProUGUI scoretxtingame;
+    public bool died;
+    public float KillCounter;
+    public float score;
+    public Volume m_Volume;
+    public Vignette m_LensDistortion;
+    public float multipleint;
+    public float multipleScore;
     public float Adrenaline = 0;
     public float MaxAdrenaline;
     public float defaultlosespeed;
@@ -24,8 +36,18 @@ public class PlayerStat : MonoBehaviour
     [Header("ItemPicked")]
     public bool medkit;
     public bool  apple, energydr, mushroom, fire;
+    
     void Update()
     {
+        if (Adrenaline <= 0&&!Immortal&&!died)
+        {
+            died = true;
+            die();
+        }
+        score = Time.time*multipleScore;
+        scoretxtingame.text = "öldürme sayýsý: "+KillCounter+"\n geçen zaman: "+Time.time.ToString("0") + "\n skor: " + score ;
+        m_Volume.profile.TryGet(out m_LensDistortion);
+        m_LensDistortion.intensity.value = (1-Adrenaline/MaxAdrenaline)*multipleint;
         Adrenaline = Mathf.Clamp(Adrenaline, -Mathf.Infinity, MaxAdrenaline);
         if (mushroom)
         {
@@ -68,7 +90,16 @@ public class PlayerStat : MonoBehaviour
             }
         }
         Adrenaline -= LoseSpeed * Time.deltaTime;
-        adrenalineBar.GetComponent<Image>().fillAmount = Adrenaline / MaxAdrenaline;
+        adrenalineBar.GetComponent<Image>().fillAmount = Adrenaline / MaxAdrenaline; 
+
 }
+    public void die()
+    {
+        
+        Time.timeScale = 0;
+        LosePanel.SetActive(true);
+        scoretext.text = "öldürme sayýsý: " + KillCounter + "\ngeçen zaman: " + Time.time.ToString("0") + "\nskor: " + score;
+
+    }
 
 }

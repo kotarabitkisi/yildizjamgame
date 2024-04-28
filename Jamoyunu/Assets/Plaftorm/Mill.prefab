@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4853219705448909569}
   - component: {fileID: 6588948475074012128}
+  - component: {fileID: 6620930828129277577}
   m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 5373105524910363632}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.3420201, w: 0.9396927}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.082, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -62,7 +63,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0.6295865, y: 0.47522104}
   m_SpriteTilingProperty:
@@ -77,6 +78,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.044148326, y: 0.78514755}
   m_EdgeRadius: 0
+--- !u!251 &6620930828129277577
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5373105524910363632}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: -76.47
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &8328273602854917938
 GameObject:
   m_ObjectHideFlags: 0
@@ -87,6 +107,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1340551275488924100}
   - component: {fileID: 4471174366781082129}
+  - component: {fileID: 877648578006970867}
   m_Layer: 3
   m_Name: GameObject (1)
   m_TagString: Untagged
@@ -103,7 +124,7 @@ Transform:
   m_GameObject: {fileID: 8328273602854917938}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: -0.3420201, w: 0.9396927}
-  m_LocalPosition: {x: -1.123, y: 0.82, z: 0}
+  m_LocalPosition: {x: -1.041, y: 0.82, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -139,7 +160,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0.6295865, y: 0.47522104}
   m_SpriteTilingProperty:
@@ -154,6 +175,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.044148326, y: 0.78514755}
   m_EdgeRadius: 0
+--- !u!251 &877648578006970867
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8328273602854917938}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 79.52
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1001 &2539791672999833980
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -165,6 +205,14 @@ PrefabInstance:
     - target: {fileID: 5146015000251318504, guid: d48f51367ef421140837e060c54abf7b, type: 3}
       propertyPath: m_Name
       value: Mill
+      objectReference: {fileID: 0}
+    - target: {fileID: 6489382731967543327, guid: d48f51367ef421140837e060c54abf7b, type: 3}
+      propertyPath: m_Size.x
+      value: 3.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 6489382731967543327, guid: d48f51367ef421140837e060c54abf7b, type: 3}
+      propertyPath: m_Size.y
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6489382731967543327, guid: d48f51367ef421140837e060c54abf7b, type: 3}
       propertyPath: m_Sprite
@@ -256,6 +304,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 9136761879807142950, guid: d48f51367ef421140837e060c54abf7b, type: 3}
+    - {fileID: 2439427768281804693, guid: d48f51367ef421140837e060c54abf7b, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 7700678191131280120, guid: d48f51367ef421140837e060c54abf7b, type: 3}

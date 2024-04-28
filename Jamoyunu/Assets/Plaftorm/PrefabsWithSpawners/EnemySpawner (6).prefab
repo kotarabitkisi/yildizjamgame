@@ -44,13 +44,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76e8d250313369b408910dbe19964d1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemsAndTraps:
-  - {fileID: 3653349069608171752, guid: 931a901a9c1ac9f43b01d8077204b096, type: 3}
-  - {fileID: 3653349069608171752, guid: be19d99a5ffd0c34c9c4b610c38e375f, type: 3}
+  Items:
   - {fileID: 3653349069608171752, guid: 83480426ecc54e052a9f155baf1035b1, type: 3}
   - {fileID: 3653349069608171752, guid: c955559fa73f67016a6d26fcc5949e25, type: 3}
-  - {fileID: 3653349069608171752, guid: f95d79580e559e87194d0ed711381ca3, type: 3}
   - {fileID: 3653349069608171752, guid: b21c801244a23e7cf9e1c62568a501f8, type: 3}
+  - {fileID: 3653349069608171752, guid: f95d79580e559e87194d0ed711381ca3, type: 3}
+  - {fileID: 2781240642279180547, guid: a100a6d9b619c3f439d4d21a23c6f349, type: 3}
+  - {fileID: 2781240642279180547, guid: 401f8858e9755da4c9d281aec7cec8c9, type: 3}
+  Traps:
+  - {fileID: 3653349069608171752, guid: be19d99a5ffd0c34c9c4b610c38e375f, type: 3}
+  - {fileID: 3653349069608171752, guid: 931a901a9c1ac9f43b01d8077204b096, type: 3}
   Player: {fileID: 0}
   range: 0
   reqrange: 50

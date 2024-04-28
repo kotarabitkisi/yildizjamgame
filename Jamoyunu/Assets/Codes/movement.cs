@@ -3,7 +3,7 @@ using UnityEngine;
 public class movement : MonoBehaviour
 {
     [ExecuteInEditMode]
-    [SerializeField] AudioSource walkingsource,MainSource;
+    [SerializeField] AudioSource walkingsource,MainSource,MusicSource;
     [SerializeField] AudioClip walkingsound,Jumpsound;
     [SerializeField] float walksoundthreshold;
     [SerializeField] float angle;
@@ -15,9 +15,15 @@ public class movement : MonoBehaviour
     [SerializeField] bool canjump;
     [SerializeField] Attacking attscript;
     [SerializeField] Animator animator;
+    [SerializeField] PlayerStat stat;
+    private void Start()
+    {
+        stat = GetComponent<PlayerStat>();
+    }
     void Update()
     {
-        #region bakmavehareket
+        if (!stat.died) {
+            #region bakmavehareket
         movevector.x = Input.GetAxis("Horizontal");
         if (movevector.x != 0)
         {
@@ -49,8 +55,14 @@ public class movement : MonoBehaviour
             }
         }
 
-        #endregion
-
+        #endregion 
+        }
+        else
+        {
+            MusicSource.enabled = false;
+            walkingsource.enabled = false;
+            MainSource.enabled = false;
+        }
     }
     void Jump()
     {

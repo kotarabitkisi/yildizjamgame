@@ -94,7 +94,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0031446815, y: 0.013594866}
+  m_Offset: {x: 0.0031446815, y: 0.03310077}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -105,7 +105,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.7429625, y: 0.46521848}
+  m_Size: {x: 1.7429625, y: 0.28216317}
   m_EdgeRadius: 0
 --- !u!114 &528467962539342906
 MonoBehaviour:
@@ -119,6 +119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c3077b7a48085244ae1b132794547c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BloodEffect: {fileID: 5416235520505105304, guid: 8c1fcd0fe9aecb74aab73997a4af05c3, type: 3}
   rb: {fileID: 4451793167842426755}
   color: {r: 0.2754717, g: 0.2754717, b: 0.2754717, a: 0}
   renderer: {fileID: 1886887561545335232}

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Itemphysic : MonoBehaviour
 {
-    
+    public GameObject BloodEffect;
     public Rigidbody2D rb;
     public Color color;
     public SpriteRenderer renderer;
@@ -25,17 +25,15 @@ public class Itemphysic : MonoBehaviour
     {
         if (collision.gameObject.layer == 3 && gameObject.tag == "Projectile")
         {
-            died = true;
-            GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
-            GetComponent<Rigidbody2D>().velocity = Vector3.zero;
-            GetComponent<BoxCollider2D>().isTrigger = true;
+            Destroy(this.gameObject,4);
         }
         if (collision.gameObject.tag=="Enemy" && gameObject.tag == "Projectile")
         {
-
+  GameObject BEffect =Instantiate(BloodEffect,collision.gameObject.transform.position,transform.rotation);
+            Destroy(BEffect,0.9f);
             collision.gameObject.GetComponent<EnemyStats>().die();
             died = true;
-            
+        
         }
     }
     private void Update()

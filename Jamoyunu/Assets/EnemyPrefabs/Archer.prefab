@@ -171,6 +171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5449a8f68355e64ea2f4ef21febdad5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BloodEffect: {fileID: 5416235520505105304, guid: 8c1fcd0fe9aecb74aab73997a4af05c3, type: 3}
   stats: {fileID: 2842491871703742680}
 --- !u!1 &3974406632899974237
 GameObject:
@@ -516,6 +517,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5449a8f68355e64ea2f4ef21febdad5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BloodEffect: {fileID: 5416235520505105304, guid: 8c1fcd0fe9aecb74aab73997a4af05c3, type: 3}
   stats: {fileID: 2842491871703742680}
 --- !u!1 &9102858049987511591
 GameObject:
@@ -572,7 +574,7 @@ MonoBehaviour:
   range: 0
   Player: {fileID: 0}
   distancetoat: 5
-  distancetosee: 15
+  distancetosee: 8
   handleTime: 0
   throwspeed: 15
   rb: {fileID: 2801500203273683307}
@@ -580,7 +582,9 @@ MonoBehaviour:
   bow: {fileID: 3974406632899974237}
   bowItem: {fileID: 6414611791486455878}
   movespeed: 0.5
+  maxspeed: 0
   arrowcount: 0
+  carpan: 0.75
 --- !u!114 &2842491871703742680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -593,13 +597,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c1c9b80abb3b6c41ae9d1ecdb35a06a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player: {fileID: 0}
   died: 0
   Itemsound: {fileID: 2778408192142317827}
   Enemydeathsound: {fileID: 8300000, guid: a2585c58f23591347980c58bc18a8329, type: 3}
   Enemydeathsound2: {fileID: 8300000, guid: 13cb57b706ee44647941cba5269d6093, type: 3}
   Item: {fileID: 3361985787967885078, guid: e05dd8ff4ea49564bb155e2bd7171ce3, type: 3}
   damage: 10
-  color: {r: 0.4188679, g: 0, b: 0, a: 0.39215687}
+  color: {r: 0.4188679, g: 0, b: 0, a: 0}
   renderer: {fileID: 7230941881108847475}
   colortime: 0
 --- !u!70 &1681199860295604383
@@ -931,6 +936,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5449a8f68355e64ea2f4ef21febdad5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BloodEffect: {fileID: 5416235520505105304, guid: 8c1fcd0fe9aecb74aab73997a4af05c3, type: 3}
   stats: {fileID: 2842491871703742680}
 --- !u!1001 &3340791437761172615
 PrefabInstance:

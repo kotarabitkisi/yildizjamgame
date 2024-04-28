@@ -5,27 +5,35 @@ using UnityEngine;
 
 public class SwordmanAttacking : MonoBehaviour
 {
+    public Animator animator;
     public EnemyStats stats;
     public bool isAttacking;
     public GameObject Sword;
     public GameObject Player;
     public float distancetoat,distancetosee;
     public Rigidbody2D rb;
-    public float movespeed,range;
+    public float movespeed,range,carpan;
 
     private void Start()
     {
         stats = GetComponent<EnemyStats>();
         Player = GameObject.FindGameObjectWithTag("Player");
+        float multiple = carpan * (1 + Time.time/100);
+        movespeed = multiple*0.5f;
+        stats.damage = multiple * 5;
+        
     }
     private void Update()
     {
-        range=Mathf.Abs(Player.transform.position.x - transform.position.x);
-        if ( range< distancetosee)
+        range = Mathf.Abs(Player.transform.position.x - transform.position.x);
+        if (range < distancetosee)
         {
             rb.velocity = new Vector2((Player.transform.position.x - transform.position.x) * movespeed, rb.velocity.y);
+            animator.SetBool("Walking", true);
         }
-        if(Player.transform.position.x - transform.position.x < 0 && !stats.died)
+        else { animator.SetBool("Walking", false); }
+
+        if (Player.transform.position.x - transform.position.x < 0 && !stats.died)
         {
             this.transform.rotation = Quaternion.Euler(0, 0, 0);
         }

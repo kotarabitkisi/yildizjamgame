@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Attacking : MonoBehaviour
 {
+    [SerializeField] AudioSource AttackSource;
+    [SerializeField] AudioClip Attacksound;
     [SerializeField] GameObject bowItem, bow;
     [SerializeField] float handleTime;
     [SerializeField] Vector2 throwvector;
@@ -32,6 +34,7 @@ public class Attacking : MonoBehaviour
         }
         else if (!isAttacking && Input.GetMouseButton(0))
         {
+            AttackSource.PlayOneShot(Attacksound);
             StartCoroutine(AttackAnim());
         }
 

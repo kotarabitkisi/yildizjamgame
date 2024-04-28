@@ -29,6 +29,7 @@ public class Medkit : MonoBehaviour
 
             PlayerStat stat = Player.GetComponent<PlayerStat>();
             stat.medkit = true;
+            stat.defaultlosespeed =Value;
             stat.LoseSpeed = Value;
             stat.LoseSpeedTime = Duration;
             Destroy(gameObject);

@@ -11,11 +11,17 @@ public class ArcherAttacking : MonoBehaviour
     public bool handling;
     public GameObject bow, bowItem;
     public float movespeed;
+    public float maxspeed;
     public int arrowcount;
+    public float carpan;
     private void Start()
     {
         stats = GetComponent<EnemyStats>();
         Player = GameObject.FindGameObjectWithTag("Player");
+        float multiple = carpan * (1 + Time.time/100);
+        movespeed = multiple*0.5f;
+        stats.damage = multiple * 5;
+
     }
     private void Update()
     {
@@ -23,6 +29,7 @@ public class ArcherAttacking : MonoBehaviour
         if (range < distancetosee)
         {
             rb.velocity = new Vector2((Player.transform.position.x - transform.position.x) * movespeed, rb.velocity.y);
+            
             animator.SetBool("Running",true);
         }
         else { animator.SetBool("Running", false); }
